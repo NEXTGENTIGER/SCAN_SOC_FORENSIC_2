@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install -y \
     libxcb-xfixes0 \
     libxcb-xkb1 \
     libxkbcommon-x11-0 \
+    xvfb \
     # Outils forensiques
     binwalk \
     foremost \
@@ -99,6 +100,7 @@ ENV PATH="/opt/zap:${PATH}"
 ENV QT_DEBUG_PLUGINS=1
 ENV QT_LOGGING_RULES="*.debug=true"
 ENV QT_X11_NO_MITSHM=1
+ENV QT_QPA_PLATFORM=offscreen
 
 # Script de démarrage
 COPY start.sh /start.sh
