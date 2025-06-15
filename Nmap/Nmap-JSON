@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-06-15T11:11:11.665775",
+  "target": "192.168.1.15",
+  "scan_options": "-sT -sV -O -A -p 1-1000",
+  "results": {
+    "192.168.1.15": {
+      "state": "up",
+      "hostname": "hydrac-zen-1.home",
+      "protocols": {
+        "tcp": {
+          "135": {
+            "state": "open",
+            "name": "msrpc",
+            "product": "Microsoft Windows RPC",
+            "version": "",
+            "extrainfo": "",
+            "reason": "syn-ack",
+            "conf": "10"
+          },
+          "139": {
+            "state": "open",
+            "name": "netbios-ssn",
+            "product": "Microsoft Windows netbios-ssn",
+            "version": "",
+            "extrainfo": "",
+            "reason": "syn-ack",
+            "conf": "10"
+          },
+          "445": {
+            "state": "open",
+            "name": "microsoft-ds",
+            "product": "",
+            "version": "",
+            "extrainfo": "",
+            "reason": "syn-ack",
+            "conf": "3"
+          },
+          "902": {
+            "state": "open",
+            "name": "vmware-auth",
+            "product": "VMware Authentication Daemon",
+            "version": "1.10",
+            "extrainfo": "Uses VNC, SOAP",
+            "reason": "syn-ack",
+            "conf": "10"
+          },
+          "912": {
+            "state": "open",
+            "name": "vmware-auth",
+            "product": "VMware Authentication Daemon",
+            "version": "1.0",
+            "extrainfo": "Uses VNC, SOAP",
+            "reason": "syn-ack",
+            "conf": "10"
+          }
+        }
+      },
+      "osmatch": [
+        {
+          "name": "Microsoft Windows XP SP3 or Windows 7 or Windows Server 2012",
+          "accuracy": "100",
+          "line": "90937",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Microsoft",
+              "osfamily": "Windows",
+              "osgen": "XP",
+              "accuracy": "100",
+              "cpe": [
+                "cpe:/o:microsoft:windows_xp::sp3"
+              ]
+            },
+            {
+              "type": "general purpose",
+              "vendor": "Microsoft",
+              "osfamily": "Windows",
+              "osgen": "7",
+              "accuracy": "100",
+              "cpe": [
+                "cpe:/o:microsoft:windows_7"
+              ]
+            },
+            {
+              "type": "general purpose",
+              "vendor": "Microsoft",
+              "osfamily": "Windows",
+              "osgen": "2012",
+              "accuracy": "100",
+              "cpe": [
+                "cpe:/o:microsoft:windows_server_2012"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}                                                                                                                                                            

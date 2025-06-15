@@ -1,0 +1,174 @@
+{
+    "timestamp": "2025-06-14T19:17:07.149424",
+    "target": "/home/user/RR/input/malware_test.exe",
+    "analysis": {
+        "basic_info": {
+            "filename": "malware_test.exe",
+            "size": 1640,
+            "type": "application/octet-stream",
+            "md5": "9418c52d2984e3b6110394187af4b56b",
+            "sha1": "e0dac4ebe8fd50b45e52c6a350431397ba1cda6a",
+            "sha256": "1f36b2780db756e6c77fa6c2622a5eb1e417de024087feb6e260fafe3103874f",
+            "created": "2025-06-14T17:07:13.861761",
+            "modified": "2025-06-14T17:07:13.861761"
+        },
+        "static_analysis": {
+            "strings": [
+                "import os",
+                "# 1. Cr",
+                "ation du dossier input et du faux fichier \"malware\"",
+                "os.makedirs(\"/home/user/RR/input\", exist_ok=True)",
+                "malware_path = \"/home/user/RR/input/malware_test.exe\"",
+                "malware_content = \"\"\"MZ",
+                "SUSPICIOUS_PATTERN_1",
+                "SUSPICIOUS_PATTERN_2",
+                "MALWARE_TEST_STRING",
+                "EVIL_FUNCTION",
+                "SYSTEM_CALL",
+                "NETWORK_ACCESS",
+                "ENCRYPTED_DATA",
+                "SHELL_CODE",
+                "cmd.exe",
+                "powershell",
+                "curl",
+                "192.168.0.66",
+                ".exe",
+                "with open(malware_path, \"w\") as f:",
+                "    f.write(malware_content)",
+                "print(f\"Fichier malware simul",
+                ": {malware_path}\")",
+                "# 2. Cr",
+                "ation du dossier rules et d'une r",
+                "gle YARA de test",
+                "yara_dir = \"/home/user/RR/rules\"",
+                "os.makedirs(yara_dir, exist_ok=True)",
+                "rule_content = \"\"\"",
+                "rule SimulatedMalware",
+                "    meta:",
+                "        description = \"R",
+                "gle de d",
+                "tection de malware simul",
+                "        author = \"ChatGPT\"",
+                "        date = \"2025-06-14\"",
+                "    strings:",
+                "        $mz = \"MZ\"",
+                "        $pattern1 = \"SUSPICIOUS_PATTERN_1\"",
+                "        $malware = \"MALWARE_TEST_STRING\"",
+                "        $network = \"NETWORK_ACCESS\"",
+                "        $shellcode = \"SHELL_CODE\"",
+                "        $cmd = \"cmd.exe\"",
+                "        $ip = /192\\\\.168\\\\.0\\\\.66/",
+                "        $pe = \"PE\"",
+                "        $exe = \".exe\"",
+                "    condition:",
+                "        3 of them",
+                "rule_path = os.path.join(yara_dir, \"simulated_malware.yar\")",
+                "with open(rule_path, \"w\") as r:",
+                "    r.write(rule_content)",
+                "print(f\"R",
+                "gle YARA cr",
+                "e: {rule_path}\")",
+                "cmd.exe",
+                "powershell",
+                "wget",
+                "curl",
+                "download",
+                "192.168.1.1",
+                "svchost.exe",
+                "explorer.exe",
+                "system32",
+                "HKEY_LOCAL_MACHINE",
+                "HKEY_CURRENT_USER",
+                "RunOnce",
+                "http://malicious.com",
+                "https://evil.com",
+                "ftp://bad.com",
+                "copy",
+                "move",
+                "delete",
+                "net user",
+                "net group",
+                "net localgroup",
+                "encrypt "
+            ],
+            "entropy": 0,
+            "patterns": {
+                "ip_addresses": [
+                    "192.168.0.66",
+                    "192.168.1.1"
+                ],
+                "urls": [
+                    "http://malicious.com",
+                    "https://evil.com"
+                ],
+                "base64": [],
+                "hex_patterns": []
+            }
+        },
+        "dynamic_analysis": {
+            "system_info": {
+                "platform": "Linux-6.11.2-amd64-x86_64-with-glibc2.40",
+                "python_version": "3.13.3",
+                "processor": "",
+                "hostname": "kali",
+                "ip_address": "127.0.1.1"
+            },
+            "network_info": {
+                "hostname": "kali",
+                "ip_address": "127.0.1.1",
+                "connections": [
+                    "Connexions Internet actives (seulement serveurs)",
+                    "Proto Recv-Q Send-Q Adresse locale          Adresse distante        Etat        PID/Program name    ",
+                    "tcp        0      0 0.0.0.0:3310            0.0.0.0:*               LISTEN      246450/docker-proxy ",
+                    "tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1069/sshd: /usr/sbi ",
+                    "tcp6       0      0 :::3310                 :::*                    LISTEN      246457/docker-proxy ",
+                    "tcp6       0      0 :::22                   :::*                    LISTEN      1069/sshd: /usr/sbi "
+                ]
+            },
+            "file_operations": {
+                "permissions": "644",
+                "owner": "root",
+                "group": "root",
+                "is_symlink": false,
+                "is_hidden": false
+            }
+        },
+        "threats": {
+            "suspicious_patterns": [
+                "cmd.exe",
+                "powershell",
+                "wget",
+                "curl",
+                "download",
+                "http://",
+                "https://",
+                "ftp://",
+                "net user",
+                "net group"
+            ],
+            "encrypted_content": {
+                "high_entropy": false,
+                "entropy_value": 0
+            },
+            "obfuscated_code": {
+                "base64_encoded": false,
+                "hex_encoded": false,
+                "suspicious_length": false
+            },
+            "network_indicators": {
+                "ip_addresses": [
+                    "192.168.0.66",
+                    "192.168.1.1"
+                ],
+                "urls": [
+                    "http://malicious.com",
+                    "https://evil.com"
+                ]
+            }
+        },
+        "recommendations": [
+            "Fichier contient des motifs suspects - Analyse approfondie recommandée",
+            "Indicateurs réseau détectés - Analyse du trafic réseau recommandée"
+        ]
+    }
+}

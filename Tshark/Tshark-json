@@ -1,0 +1,879 @@
+{
+  "timestamp": "2025-06-15T10:47:21.554247",
+  "interface": "eth0",
+  "packet_count": 10,
+  "analysis": {
+    "protocols": {
+      "ip": 2,
+      "udp": 2,
+      "dns": 2,
+      "arp": 8
+    },
+    "top_ips": {
+      "192.168.75.133": 2,
+      "192.168.75.2": 2
+    },
+    "top_ports": {},
+    "suspicious_patterns": []
+  },
+  "raw_packets": [
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:15.837548469 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:15.837548469 UTC",
+            "frame.time_epoch": "1749977235.837548469",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.000000000",
+            "frame.time_delta_displayed": "0.000000000",
+            "frame.time_relative": "0.000000000",
+            "frame.number": "1",
+            "frame.len": "82",
+            "frame.cap_len": "82",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:ip:udp:dns"
+          },
+          "eth": {
+            "eth.dst": "00:50:56:e0:a7:95",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "00:50:56:e0:a7:95",
+              "eth.dst.oui": "20566",
+              "eth.dst.oui_resolved": "VMware, Inc.",
+              "eth.dst.lg": "0",
+              "eth.dst.ig": "0",
+              "eth.addr": "00:50:56:e0:a7:95",
+              "eth.addr_resolved": "00:50:56:e0:a7:95",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.src": "00:0c:29:73:fd:e0",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:0c:29:73:fd:e0",
+              "eth.src.oui": "3113",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:0c:29:73:fd:e0",
+              "eth.addr_resolved": "00:0c:29:73:fd:e0",
+              "eth.addr.oui": "3113",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0800",
+            "eth.stream": "0"
+          },
+          "ip": {
+            "ip.version": "4",
+            "ip.hdr_len": "20",
+            "ip.dsfield": "0x00",
+            "ip.dsfield_tree": {
+              "ip.dsfield.dscp": "0",
+              "ip.dsfield.ecn": "0"
+            },
+            "ip.len": "68",
+            "ip.id": "0x2ae9",
+            "ip.flags": "0x02",
+            "ip.flags_tree": {
+              "ip.flags.rb": "0",
+              "ip.flags.df": "1",
+              "ip.flags.mf": "0"
+            },
+            "ip.frag_offset": "0",
+            "ip.ttl": "64",
+            "ip.proto": "17",
+            "ip.checksum": "0xf7e7",
+            "ip.checksum.status": "2",
+            "ip.src": "192.168.75.133",
+            "ip.addr": "192.168.75.2",
+            "ip.src_host": "192.168.75.133",
+            "ip.host": "192.168.75.2",
+            "ip.dst": "192.168.75.2",
+            "ip.dst_host": "192.168.75.2",
+            "ip.stream": "0"
+          },
+          "udp": {
+            "udp.srcport": "37872",
+            "udp.dstport": "53",
+            "udp.port": "53",
+            "udp.length": "48",
+            "udp.checksum": "0xa066",
+            "udp.checksum.status": "2",
+            "udp.stream": "0",
+            "udp.stream.pnum": "1",
+            "Timestamps": {
+              "udp.time_relative": "0.000000000",
+              "udp.time_delta": "0.000000000"
+            },
+            "udp.payload": "a2:11:01:00:00:01:00:00:00:00:00:00:07:63:75:72:72:65:6e:74:03:63:76:64:06:63:6c:61:6d:61:76:03:6e:65:74:00:00:10:00:01"
+          },
+          "dns": {
+            "dns.id": "0xa211",
+            "dns.flags": "0x0100",
+            "dns.flags_tree": {
+              "dns.flags.response": "0",
+              "dns.flags.opcode": "0",
+              "dns.flags.truncated": "0",
+              "dns.flags.recdesired": "1",
+              "dns.flags.z": "0",
+              "dns.flags.checkdisable": "0"
+            },
+            "dns.count.queries": "1",
+            "dns.count.answers": "0",
+            "dns.count.auth_rr": "0",
+            "dns.count.add_rr": "0",
+            "Queries": {
+              "current.cvd.clamav.net: type TXT, class IN": {
+                "dns.qry.name": "current.cvd.clamav.net",
+                "dns.qry.name.len": "22",
+                "dns.count.labels": "4",
+                "dns.qry.type": "16",
+                "dns.qry.class": "0x0001"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:15.847136844 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:15.847136844 UTC",
+            "frame.time_epoch": "1749977235.847136844",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.009588375",
+            "frame.time_delta_displayed": "0.009588375",
+            "frame.time_relative": "0.009588375",
+            "frame.number": "2",
+            "frame.len": "135",
+            "frame.cap_len": "135",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:ip:udp:dns"
+          },
+          "eth": {
+            "eth.dst": "00:0c:29:73:fd:e0",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "00:0c:29:73:fd:e0",
+              "eth.dst.oui": "3113",
+              "eth.dst.oui_resolved": "VMware, Inc.",
+              "eth.dst.lg": "0",
+              "eth.dst.ig": "0",
+              "eth.addr": "00:0c:29:73:fd:e0",
+              "eth.addr_resolved": "00:0c:29:73:fd:e0",
+              "eth.addr.oui": "3113",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.src": "00:50:56:e0:a7:95",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:e0:a7:95",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:e0:a7:95",
+              "eth.addr_resolved": "00:50:56:e0:a7:95",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0800",
+            "eth.stream": "0"
+          },
+          "ip": {
+            "ip.version": "4",
+            "ip.hdr_len": "20",
+            "ip.dsfield": "0x00",
+            "ip.dsfield_tree": {
+              "ip.dsfield.dscp": "0",
+              "ip.dsfield.ecn": "0"
+            },
+            "ip.len": "121",
+            "ip.id": "0x8de5",
+            "ip.flags": "0x00",
+            "ip.flags_tree": {
+              "ip.flags.rb": "0",
+              "ip.flags.df": "0",
+              "ip.flags.mf": "0"
+            },
+            "ip.frag_offset": "0",
+            "ip.ttl": "128",
+            "ip.proto": "17",
+            "ip.checksum": "0x94b6",
+            "ip.checksum.status": "2",
+            "ip.src": "192.168.75.2",
+            "ip.addr": "192.168.75.133",
+            "ip.src_host": "192.168.75.2",
+            "ip.host": "192.168.75.133",
+            "ip.dst": "192.168.75.133",
+            "ip.dst_host": "192.168.75.133",
+            "ip.stream": "0"
+          },
+          "udp": {
+            "udp.srcport": "53",
+            "udp.dstport": "37872",
+            "udp.port": "37872",
+            "udp.length": "101",
+            "udp.checksum": "0x24ed",
+            "udp.checksum.status": "2",
+            "udp.stream": "0",
+            "udp.stream.pnum": "2",
+            "Timestamps": {
+              "udp.time_relative": "0.009588375",
+              "udp.time_delta": "0.009588375"
+            },
+            "udp.payload": "a2:11:81:80:00:01:00:01:00:00:00:00:07:63:75:72:72:65:6e:74:03:63:76:64:06:63:6c:61:6d:61:76:03:6e:65:74:00:00:10:00:01:c0:0c:00:10:00:01:00:00:00:05:00:29:28:31:2e:30:2e:38:3a:36:32:3a:32:37:36:36:38:3a:31:37:34:39:39:37:34:34:30:30:3a:31:3a:39:30:3a:34:39:31:39:32:3a:33:33:36"
+          },
+          "dns": {
+            "dns.id": "0xa211",
+            "dns.flags": "0x8180",
+            "dns.flags_tree": {
+              "dns.flags.response": "1",
+              "dns.flags.opcode": "0",
+              "dns.flags.authoritative": "0",
+              "dns.flags.truncated": "0",
+              "dns.flags.recdesired": "1",
+              "dns.flags.recavail": "1",
+              "dns.flags.z": "0",
+              "dns.flags.authenticated": "0",
+              "dns.flags.checkdisable": "0",
+              "dns.flags.rcode": "0"
+            },
+            "dns.count.queries": "1",
+            "dns.count.answers": "1",
+            "dns.count.auth_rr": "0",
+            "dns.count.add_rr": "0",
+            "Queries": {
+              "current.cvd.clamav.net: type TXT, class IN": {
+                "dns.qry.name": "current.cvd.clamav.net",
+                "dns.qry.name.len": "22",
+                "dns.count.labels": "4",
+                "dns.qry.type": "16",
+                "dns.qry.class": "0x0001"
+              }
+            },
+            "Answers": {
+              "current.cvd.clamav.net: type TXT, class IN": {
+                "dns.resp.name": "current.cvd.clamav.net",
+                "dns.resp.type": "16",
+                "dns.resp.class": "0x0001",
+                "dns.resp.ttl": "5",
+                "dns.resp.len": "41",
+                "dns.txt.length": "40",
+                "dns.txt": "1.0.8:62:27668:1749974400:1:90:49192:336"
+              }
+            },
+            "dns.response_to": "1",
+            "dns.time": "0.009588375"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:16.350973641 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:16.350973641 UTC",
+            "frame.time_epoch": "1749977236.350973641",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.503836797",
+            "frame.time_delta_displayed": "0.503836797",
+            "frame.time_relative": "0.513425172",
+            "frame.number": "3",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:17.273890397 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:17.273890397 UTC",
+            "frame.time_epoch": "1749977237.273890397",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.922916756",
+            "frame.time_delta_displayed": "0.922916756",
+            "frame.time_relative": "1.436341928",
+            "frame.number": "4",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:18.278581382 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:18.278581382 UTC",
+            "frame.time_epoch": "1749977238.278581382",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "1.004690985",
+            "frame.time_delta_displayed": "1.004690985",
+            "frame.time_relative": "2.441032913",
+            "frame.number": "5",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:19.379183882 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:19.379183882 UTC",
+            "frame.time_epoch": "1749977239.379183882",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "1.100602500",
+            "frame.time_delta_displayed": "1.100602500",
+            "frame.time_relative": "3.541635413",
+            "frame.number": "6",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:20.275104689 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:20.275104689 UTC",
+            "frame.time_epoch": "1749977240.275104689",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.895920807",
+            "frame.time_delta_displayed": "0.895920807",
+            "frame.time_relative": "4.437556220",
+            "frame.number": "7",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:20.929086921 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:20.929086921 UTC",
+            "frame.time_epoch": "1749977240.929086921",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.653982232",
+            "frame.time_delta_displayed": "0.653982232",
+            "frame.time_relative": "5.091538452",
+            "frame.number": "8",
+            "frame.len": "42",
+            "frame.cap_len": "42",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "00:50:56:e0:a7:95",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "00:50:56:e0:a7:95",
+              "eth.dst.oui": "20566",
+              "eth.dst.oui_resolved": "VMware, Inc.",
+              "eth.dst.lg": "0",
+              "eth.dst.ig": "0",
+              "eth.addr": "00:50:56:e0:a7:95",
+              "eth.addr_resolved": "00:50:56:e0:a7:95",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.src": "00:0c:29:73:fd:e0",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:0c:29:73:fd:e0",
+              "eth.src.oui": "3113",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:0c:29:73:fd:e0",
+              "eth.addr_resolved": "00:0c:29:73:fd:e0",
+              "eth.addr.oui": "3113",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "0"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:0c:29:73:fd:e0",
+            "arp.src.proto_ipv4": "192.168.75.133",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:20.929423810 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:20.929423810 UTC",
+            "frame.time_epoch": "1749977240.929423810",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.000336889",
+            "frame.time_delta_displayed": "0.000336889",
+            "frame.time_relative": "5.091875341",
+            "frame.number": "9",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "00:0c:29:73:fd:e0",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "00:0c:29:73:fd:e0",
+              "eth.dst.oui": "3113",
+              "eth.dst.oui_resolved": "VMware, Inc.",
+              "eth.dst.lg": "0",
+              "eth.dst.ig": "0",
+              "eth.addr": "00:0c:29:73:fd:e0",
+              "eth.addr_resolved": "00:0c:29:73:fd:e0",
+              "eth.addr.oui": "3113",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.src": "00:50:56:e0:a7:95",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:e0:a7:95",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:e0:a7:95",
+              "eth.addr_resolved": "00:50:56:e0:a7:95",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "0",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "2",
+            "arp.src.hw_mac": "00:50:56:e0:a7:95",
+            "arp.src.proto_ipv4": "192.168.75.2",
+            "arp.dst.hw_mac": "00:0c:29:73:fd:e0",
+            "arp.dst.proto_ipv4": "192.168.75.133"
+          }
+        }
+      }
+    },
+    {
+      "_index": "packets-2025-06-15",
+      "_type": "doc",
+      "_score": null,
+      "_source": {
+        "layers": {
+          "frame": {
+            "frame.section_number": "1",
+            "frame.interface_id": "0",
+            "frame.interface_id_tree": {
+              "frame.interface_name": "eth0"
+            },
+            "frame.encap_type": "1",
+            "frame.time": "Jun 15, 2025 10:47:21.280941279 CEST",
+            "frame.time_utc": "Jun 15, 2025 08:47:21.280941279 UTC",
+            "frame.time_epoch": "1749977241.280941279",
+            "frame.offset_shift": "0.000000000",
+            "frame.time_delta": "0.351517469",
+            "frame.time_delta_displayed": "0.351517469",
+            "frame.time_relative": "5.443392810",
+            "frame.number": "10",
+            "frame.len": "60",
+            "frame.cap_len": "60",
+            "frame.marked": "0",
+            "frame.ignored": "0",
+            "frame.protocols": "eth:ethertype:arp"
+          },
+          "eth": {
+            "eth.dst": "ff:ff:ff:ff:ff:ff",
+            "eth.dst_tree": {
+              "eth.dst_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.dst.oui": "16777215",
+              "eth.dst.lg": "1",
+              "eth.dst.ig": "1",
+              "eth.addr": "ff:ff:ff:ff:ff:ff",
+              "eth.addr_resolved": "ff:ff:ff:ff:ff:ff",
+              "eth.addr.oui": "16777215",
+              "eth.lg": "1",
+              "eth.ig": "1"
+            },
+            "eth.src": "00:50:56:c0:00:08",
+            "eth.src_tree": {
+              "eth.src_resolved": "00:50:56:c0:00:08",
+              "eth.src.oui": "20566",
+              "eth.src.oui_resolved": "VMware, Inc.",
+              "eth.src.lg": "0",
+              "eth.src.ig": "0",
+              "eth.addr": "00:50:56:c0:00:08",
+              "eth.addr_resolved": "00:50:56:c0:00:08",
+              "eth.addr.oui": "20566",
+              "eth.addr.oui_resolved": "VMware, Inc.",
+              "eth.lg": "0",
+              "eth.ig": "0"
+            },
+            "eth.type": "0x0806",
+            "eth.stream": "1",
+            "eth.padding": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"
+          },
+          "arp": {
+            "arp.hw.type": "1",
+            "arp.proto.type": "0x0800",
+            "arp.hw.size": "6",
+            "arp.proto.size": "4",
+            "arp.opcode": "1",
+            "arp.src.hw_mac": "00:50:56:c0:00:08",
+            "arp.src.proto_ipv4": "192.168.75.1",
+            "arp.dst.hw_mac": "00:00:00:00:00:00",
+            "arp.dst.proto_ipv4": "192.168.75.2"
+          }
+        }
+      }
+    }
+  ]
+}                                                      
