@@ -53,11 +53,11 @@ RUN git clone https://github.com/volatilityfoundation/volatility3.git \
     && cd .. \
     && rm -rf volatility3
 
-# Installer ZAP
-RUN wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz \
-    && tar -xf ZAP_2.14.0_Linux.tar.gz \
-    && mv ZAP_2.14.0 /opt/zap \
-    && rm ZAP_2.14.0_Linux.tar.gz
+# Installation de ZAP
+RUN wget https://github.com/zaproxy/zaproxy/releases/download/v2.15.0/ZAP_2.15.0_Linux.tar.gz \
+    && tar -xf ZAP_2.15.0_Linux.tar.gz \
+    && mv ZAP_2.15.0 /opt/zap \
+    && rm ZAP_2.15.0_Linux.tar.gz
 
 # Créer un répertoire pour l'application
 WORKDIR /app
