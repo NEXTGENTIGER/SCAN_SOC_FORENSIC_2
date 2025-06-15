@@ -1,0 +1,5 @@
+PyQt6==6.6.1
+python-nmap==0.7.1
+requests==2.31.0
+python-magic==0.4.27
+netifaces==0.11.0 

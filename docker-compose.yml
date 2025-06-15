@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  security-toolbox:
+    build: .
+    container_name: security-toolbox
+    volumes:
+      - ./results:/app/results
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    devices:
+      - /dev/snd
+    privileged: true
+    restart: unless-stopped
+    depends_on:
+      - api-service
+
+  api-service:
+    image: python:3.9
+    container_name: security-api
+    volumes:
+      - ./results:/app/results
+    ports:
+      - "5000:5000"
+    working_dir: /app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    command: >
+      bash -c "pip install flask &&
+              echo 'from flask import Flask, request, jsonify
+              app = Flask(__name__)
+              @app.route(\"/api/v1/report/upload_json/\", methods=[\"POST\"])
+              def upload_json():
+                  data = request.json
+                  return jsonify({\"status\": \"success\", \"message\": \"Report received\"})
+              if __name__ == \"__main__\":
+                  app.run(host=\"0.0.0.0\", port=5000)' > app.py &&
+              python app.py"
+    restart: unless-stopped
+    networks:
+      - security-network
+
+networks:
+  security-network:
+    driver: bridge 
