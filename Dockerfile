@@ -4,7 +4,7 @@ FROM python:3.9-slim
 # Éviter les questions interactives pendant l'installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Mettre à jour le système et installer les dépendances système utiles
+# Mettre à jour le système et installer les dépendances système
 RUN apt-get update && apt-get install -y \
     nmap \
     tshark \
@@ -19,18 +19,25 @@ RUN apt-get update && apt-get install -y \
     libnetfilter-queue1 \
     libjpeg-dev \
     zlib1g-dev \
+    # Outils forensiques
     binwalk \
     foremost \
     exiftool \
+    strings \
     xxd \
     file \
     md5deep \
+    sha1deep \
+    sha256deep \
+    # Outils supplémentaires pour l'analyse forensique
     python3-magic \
     python3-yara \
     yara \
+    radare2 \
+    volatility3 \
     && rm -rf /var/lib/apt/lists/*
 
-# Installer ZAP manuellement (version stable connue)
+# Installer ZAP
 RUN wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz \
     && tar -xf ZAP_2.14.0_Linux.tar.gz \
     && mv ZAP_2.14.0 /opt/zap \
@@ -61,5 +68,5 @@ ENV DISPLAY=:0
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/opt/zap:${PATH}"
 
-# Commande par défaut
-CMD ["python", "security_toolbox.py"]
+# Commande par défaut pour lancer l'application
+CMD ["python", "security_toolbox.py"] 
