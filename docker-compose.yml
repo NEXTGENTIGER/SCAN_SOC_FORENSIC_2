@@ -3,19 +3,16 @@ version: '3.8'
 services:
   security-toolbox:
     build: .
-    container_name: security-toolbox
     volumes:
       - ./results:/app/results
       - ./logs:/app/logs
       - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp/.X11-unix:/tmp/.X11-unix
-    network_mode: host
     environment:
-      - DISPLAY=${DISPLAY}
-      - QT_X11_NO_MITSHM=1
+      - DISPLAY=:0
       - PYTHONUNBUFFERED=1
-    privileged: true
-    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    command: python security_toolbox.py
 
 networks:
   security-network:
