@@ -14,16 +14,20 @@ services:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
       - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
-    devices:
-      - /dev/snd
     privileged: true
     restart: unless-stopped
-    depends_on:
-      - api-service
-      - zap-service
 
-  api-service:
+  zap:
+    image: owasp/zap2docker-stable
+    container_name: zap
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./results:/zap/wrk
+    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
+    restart: unless-stopped
+
+  api:
     image: python:3.9-slim
     container_name: security-api
     volumes:
@@ -35,13 +39,11 @@ services:
     environment:
       - FLASK_APP=app.py
       - FLASK_ENV=development
-      - PYTHONUNBUFFERED=1
     command: >
       bash -c "pip install flask flask-cors &&
               echo 'from flask import Flask, request, jsonify
               from flask_cors import CORS
               import json
-              import os
               from datetime import datetime
 
               app = Flask(__name__)
@@ -72,23 +74,6 @@ services:
                   app.run(host=\"0.0.0.0\", port=5000)' > app.py &&
               python app.py"
     restart: unless-stopped
-    networks:
-      - security-network
-
-  zap-service:
-    image: owasp/zap2docker-stable
-    container_name: zap-service
-    ports:
-      - "8080:8080"
-      - "8090:8090"
-    environment:
-      - ZAP_WEBSWING_OPTS=-Xmx512m
-    volumes:
-      - ./results:/zap/results
-    command: zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true -config api.key=zap
-    restart: unless-stopped
-    networks:
-      - security-network
 
 networks:
   security-network:
