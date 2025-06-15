@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   security-toolbox:
     build: .
@@ -17,4 +19,4 @@ services:
 
 networks:
   security-network:
-    driver: bridge
+    driver: bridge 
