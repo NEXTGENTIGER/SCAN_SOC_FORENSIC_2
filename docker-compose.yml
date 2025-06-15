@@ -3,16 +3,18 @@ version: '3.8'
 services:
   security-toolbox:
     build: .
+    container_name: security-toolbox
     volumes:
       - ./results:/app/results
       - ./logs:/app/logs
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DISPLAY=:0
+      - QT_X11_NO_MITSHM=1
       - PYTHONUNBUFFERED=1
-    ports:
-      - "5000:5000"
-    command: python security_toolbox.py
+      - QT_QPA_PLATFORM=offscreen
+    privileged: true
+    restart: unless-stopped
 
 networks:
   security-network:
