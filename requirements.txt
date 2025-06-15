@@ -10,6 +10,9 @@ netifaces==0.11.0
 requests==2.31.0
 scapy==2.5.0
 psutil==5.9.8
+python-owasp-zap-v2.4==0.0.20
+selenium==4.18.1
+webdriver-manager==4.0.1
 
 # Utilitaires
 python-dateutil==2.8.2
