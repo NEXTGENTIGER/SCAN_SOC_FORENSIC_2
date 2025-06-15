@@ -25,6 +25,19 @@ RUN apt-get update && apt-get install -y \
     libnetfilter-queue1 \
     libjpeg-dev \
     zlib1g-dev \
+    # Qt dependencies
+    libgl1-mesa-glx \
+    libxcb-xinerama0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-shape0 \
+    libxcb-sync1 \
+    libxcb-xfixes0 \
+    libxcb-xkb1 \
+    libxkbcommon-x11-0 \
     # Outils forensiques
     binwalk \
     foremost \
@@ -83,6 +96,13 @@ EXPOSE 5000
 ENV DISPLAY=:0
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/opt/zap:${PATH}"
+ENV QT_DEBUG_PLUGINS=1
+ENV QT_LOGGING_RULES="*.debug=true"
+ENV QT_X11_NO_MITSHM=1
 
-# Commande par défaut pour lancer l'application
-CMD ["python", "security_toolbox.py"] 
+# Script de démarrage
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+# Commande par défaut
+CMD ["/start.sh"] 
