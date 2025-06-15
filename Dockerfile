@@ -8,16 +8,40 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     nmap \
     tshark \
-    x11-apps \
-    libmagic1 \
+    default-jre \
+    wget \
+    unzip \
+    curl \
+    git \
+    build-essential \
     libpcap-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    libffi-dev \
-    libssl-dev \
-    libglib2.0-0 \
-    libgl1-mesa-glx \
+    libmagic1 \
+    libnetfilter-queue1 \
+    libjpeg-dev \
+    zlib1g-dev \
+    # Outils forensiques
+    binwalk \
+    foremost \
+    exiftool \
+    strings \
+    xxd \
+    file \
+    md5deep \
+    sha1deep \
+    sha256deep \
+    # Outils supplémentaires pour l'analyse forensique
+    python3-magic \
+    python3-yara \
+    yara \
+    radare2 \
+    volatility3 \
     && rm -rf /var/lib/apt/lists/*
+
+# Installer ZAP
+RUN wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz \
+    && tar -xf ZAP_2.14.0_Linux.tar.gz \
+    && mv ZAP_2.14.0 /opt/zap \
+    && rm ZAP_2.14.0_Linux.tar.gz
 
 # Créer un répertoire pour l'application
 WORKDIR /app
@@ -34,15 +58,15 @@ COPY Zap/ ./Zap/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Créer les répertoires nécessaires
-RUN mkdir -p results logs
+RUN mkdir -p results logs input output rules
 
 # Exposer les ports
 EXPOSE 5000
 
 # Variables d'environnement
-ENV DISPLAY=host.docker.internal:0.0
-ENV QT_X11_NO_MITSHM=1
+ENV DISPLAY=:0
 ENV PYTHONUNBUFFERED=1
+ENV PATH="/opt/zap:${PATH}"
 
 # Commande par défaut pour lancer l'application
 CMD ["python", "security_toolbox.py"] 
