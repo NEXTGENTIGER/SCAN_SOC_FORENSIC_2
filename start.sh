@@ -3,6 +3,10 @@
 # Activer le mode debug
 set -x
 
+# Démarrer Xvfb
+Xvfb :0 -screen 0 1024x768x24 &
+export DISPLAY=:0
+
 # Vérifier les dépendances
 echo "Vérification des dépendances..."
 which python3 || { echo "Python3 non trouvé"; exit 1; }
