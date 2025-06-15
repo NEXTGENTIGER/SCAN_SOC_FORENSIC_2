@@ -6,6 +6,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Mettre à jour le système et installer les dépendances système
 RUN apt-get update && apt-get install -y \
+    gnupg2 \
+    software-properties-common \
+    && echo "deb http://deb.debian.org/debian bullseye main" >> /etc/apt/sources.list \
+    && echo "deb http://deb.debian.org/debian bullseye-updates main" >> /etc/apt/sources.list \
+    && echo "deb http://security.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list \
+    && apt-get update && apt-get install -y \
     nmap \
     tshark \
     default-jre \
@@ -23,19 +29,29 @@ RUN apt-get update && apt-get install -y \
     binwalk \
     foremost \
     exiftool \
-    strings \
     xxd \
     file \
-    md5deep \
-    sha1deep \
-    sha256deep \
+    # Outils de hachage
+    hashdeep \
     # Outils supplémentaires pour l'analyse forensique
     python3-magic \
     python3-yara \
     yara \
-    radare2 \
-    volatility3 \
     && rm -rf /var/lib/apt/lists/*
+
+# Installation de Radare2
+RUN git clone https://github.com/radareorg/radare2.git \
+    && cd radare2 \
+    && ./sys/install.sh \
+    && cd .. \
+    && rm -rf radare2
+
+# Installation de Volatility3
+RUN git clone https://github.com/volatilityfoundation/volatility3.git \
+    && cd volatility3 \
+    && pip install -e . \
+    && cd .. \
+    && rm -rf volatility3
 
 # Installer ZAP
 RUN wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz \
