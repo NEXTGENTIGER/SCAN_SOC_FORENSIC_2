@@ -1,5 +1,3 @@
-docker-compose.yml
-
 services:
   security-toolbox:
     build: .
