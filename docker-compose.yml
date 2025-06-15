@@ -1,4 +1,4 @@
-version: '3.8'
+docker-compose.yml
 
 services:
   security-toolbox:
@@ -19,4 +19,4 @@ services:
 
 networks:
   security-network:
-    driver: bridge 
+    driver: bridge
