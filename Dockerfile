@@ -10,25 +10,13 @@ RUN apt-get update && apt-get install -y \
     tshark \
     x11-apps \
     libmagic1 \
-    libnetfilter-queue1 \
     libpcap-dev \
     libxml2-dev \
     libxslt1-dev \
     libffi-dev \
     libssl-dev \
-    libjpeg-dev \
-    zlib1g-dev \
-    libpng-dev \
     libglib2.0-0 \
     libgl1-mesa-glx \
-    libxcb-xinerama0 \
-    libxcb-icccm4 \
-    libxcb-image0 \
-    libxcb-keysyms1 \
-    libxcb-randr0 \
-    libxcb-render-util0 \
-    libxcb-xkb1 \
-    libxkbcommon-x11-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Créer un répertoire pour l'application
@@ -49,13 +37,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir -p results logs
 
 # Exposer les ports
-EXPOSE 5000 8080 8090
+EXPOSE 5000
 
 # Variables d'environnement
 ENV DISPLAY=host.docker.internal:0.0
 ENV QT_X11_NO_MITSHM=1
 ENV PYTHONUNBUFFERED=1
-ENV PYTHONDONTWRITEBYTECODE=1
 
 # Commande par défaut pour lancer l'application
 CMD ["python", "security_toolbox.py"] 
